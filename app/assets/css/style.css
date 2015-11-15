@@ -1,0 +1,290 @@
+/* Import fonts */
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed|Lato:300);
+
+/* ////////// Generic styles ////////// */
+
+/* Generic font */
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #212121;
+}
+
+/* titles font */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+}
+
+a {
+    color: #009688;
+}
+
+a:hover {
+    color: #00796B;
+}
+
+input {
+    max-width: 100%;
+}
+
+input[disabled] {
+    background-color: #eee;
+}
+
+/* //////////////////////////////////// */
+
+/* ///////// Navbar overrides ///////// */
+
+.navbar-default {
+    background-color: #009688;
+    border-color: #00796b;
+}
+
+.navbar-default .navbar-brand {
+    color: #fafafa;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-text {
+    color: #fafafa;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fafafa;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: #00796b;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: #ffffff;
+    background-color: #00796b;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #00796b;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: #00796b;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fafafa;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border-color: #fafafa;
+}
+
+.navbar-default .navbar-link {
+    color: #fafafa;
+}
+
+.navbar-default .navbar-link:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #fafafa;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #ffffff;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #ffffff;
+        background-color: #00796b;
+    }
+}
+
+/* //////////////////////////////////// */
+
+/* //////// Carousel overrides //////// */
+
+.carousel-control, .carousel-control:hover {
+    opacity: 1;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background: none;
+}
+
+/* //////////////////////////////////// */
+
+/* //////////// Google Maps /////////// */
+
+.google-maps {
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+}
+
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* //////////////////////////////////// */
+
+/* ////////// Custom Styles /////////// */
+
+.margin-header {
+    margin-top: 50px;
+}
+
+.container-960 {
+    max-width: 960px;
+}
+
+.content-container {
+    padding-bottom: 50px;
+}
+
+.navbar-default .navbar-nav > li {
+    transition: background-color 500ms ease-in-out;
+}
+
+.navbar-default .navbar-nav > li:hover {
+    background-color: #00796B;
+    transition: background-color 500ms ease-in-out;
+}
+
+#custom-carousel {
+    background: url(../img/footer_pattern.png) repeat fixed;
+}
+
+.carousel-container {
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 70px;
+    color: #FFFFFF;
+}
+
+.carousel-image {
+    border-radius: 6px;
+}
+
+.icon-container {
+    max-width: 256px;
+    margin: 0 auto;
+}
+
+.bg-icon {
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+}
+
+.icon-teacher {
+    background: url(../img/icon_teacher.png) no-repeat center center;
+    background-size: contain;
+}
+
+.icon-training {
+    background: url(../img/icon_training.png) no-repeat center center;
+    background-size: contain;
+}
+
+.icon-champion {
+    background: url(../img/icon_champion.png) no-repeat center center;
+    background-size: contain;
+}
+
+main.form-container {
+    padding-top: 150px;
+    padding-bottom: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-image: url(../img/padel-bg-blur.jpg);
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 480px) {
+    main.form-container {
+        padding-top: 70px;
+        padding-bottom: 20px;
+    }
+}
+
+.form-header {
+    border-bottom: 1px solid #eee;
+    margin-top: 0;
+    padding-bottom: .2em;
+}
+
+.custom-form {
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 2em;
+    max-width: 480px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.page-footer {
+    padding: 1em;
+    background: url(../img/footer_pattern.png) repeat fixed;
+    color: #FFFFFF;
+}
+
+.upm-logo-container {
+    margin: 0 auto;
+    box-shadow: inset 5px 5px 10px 0px rgba(33, 33, 33, 1);
+    max-width: 225px;
+    background-color: #727272;
+    border-radius: 10px;
+}
+
+.upm-logo {
+    background: url(../img/upm-logo.gif) no-repeat center center;
+    background-size: contain;
+}
+
+.contact-icon {
+    margin: 5px;
+    padding-left: 4em;
+    padding-bottom: 4em;
+}
+
+.contact-icon-twitter {
+    background: url(../img/footer-icons/twitter.png) no-repeat center center;
+    background-size: contain;
+}
+
+.contact-icon-twitter:hover {
+    background: url(../img/footer-icons/twitter_hover.png) no-repeat center center;
+    background-size: contain;
+}
+
+.contact-icon-facebook {
+    background: url(../img/footer-icons/facebook.png) no-repeat center center;
+    background-size: contain;
+}
+
+.contact-icon-facebook:hover {
+    background: url(../img/footer-icons/facebook_hover.png) no-repeat center center;
+    background-size: contain;
+}
+
+.contact {
+    min-height: 10em;
+}

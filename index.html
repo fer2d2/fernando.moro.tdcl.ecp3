@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es" ng-app="padelApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pádel UPM">
+    <meta name="author" content="Fernando Moro Hernandez">
+
+    <link href="app/assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+
+    <title>Pádel UPM</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="app/assets/css/style.css"/>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+    <!--custom scripts-->
+    <script src="app/assets/js/carousel.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/config/constants.js"></script>
+    <script src="app/config/routing.js"></script>
+    <script src="app/controllers/navbar-controller.js"></script>
+    <script src="app/controllers/login-controller.js"></script>
+    <script src="app/controllers/logout-controller.js"></script>
+    <script src="app/services/authentication.js"></script>
+</head>
+<body>
+
+<div ng-include="'app/views/partials/navbar.html'"></div>
+
+<div ng-view></div>
+
+<div ng-include="'app/views/partials/footer.html'"></div>
+
+</body>
+</html>
