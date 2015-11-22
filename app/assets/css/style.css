@@ -244,6 +244,17 @@ main.form-container {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
+.datepicker-container {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: .2em;
+}
+
+.datepicker-button {
+    padding: .2em;
+    text-align: center;
+}
+
 .page-footer {
     padding: 1em;
     background: url(../img/footer_pattern.png) repeat fixed;

@@ -13,6 +13,7 @@ angular.module('padelApp')
             })
             .when('/booking', {
                 templateUrl: 'app/views/booking.html',
+                controller: 'bookingController',
                 activeTab: activeTabs.booking
             })
             .when('/register', {

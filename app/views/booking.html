@@ -1,27 +1,58 @@
 <main class="container-fluid container-960 margin-header content-container">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Instalaciones</h1>
+    <div class="login-check" ng-show="!authenticated">
+        <div class="courts-selector">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Reserva de pistas</h1>
+                    <h3>Es necesario estar autenticado para acceder al área de reserva de pistas.</h3>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="courts-selector" ng-show="authenticated">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Reserva de pistas</h1>
 
-    <div class="row">
-        <section class="col-md-8">
-            <div class="google-maps">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.809024093697!2d-3.6304276842671728!3d40.390925065131725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDIzJzI3LjMiTiAzwrAzNyc0MS43Ilc!5e0!3m2!1ses!2ses!4v1447604077692"
-                        width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <div class="datepicker-container">
+                    <div class="input-group">
+                        <input type="date" class="form-control" uib-datepicker-popup
+                               ng-model="dt"
+                               is-open="datePickerLogic.status.opened"
+                               min-date="datePickerLogic.minDate"
+                               datepicker-options="datePickerLogic.dateOptions"
+                               ng-required="true"
+                               close-text="Close"/>
+
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default" ng-click="datePickerLogic.open($event)">
+                          <i class="glyphicon glyphicon-calendar"></i>
+                      </button>
+                    </span>
+                    </div>
+                </div>
+                <div class="datepicker-button">
+                    <button class="btn btn-default" ng-click="queryAvailableCourts()">Consultar fecha</button>
+                </div>
             </div>
-        </section>
-        <section class="col-md-4 info">
-            <h4>Disponemos de:</h4>
-            <ul class="list-group">
-                <li class="list-group-item">4 pistas de cristal cubiertas</li>
-                <li class="list-group-item">3 pistas de cristal semicubiertas</li>
-                <li class="list-group-item">3 pistas de cemento exteriores</li>
-                <li class="list-group-item">2 pistas de tenis</li>
-                <li class="list-group-item">Vestuarios completos</li>
-                <li class="list-group-item">Cafetería con terraza</li>
-            </ul>
-        </section>
+        </div>
+        <div class="row results" ng-show="showCourtsAvailableTable()">
+            <div class="col-lg-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Número de pista</th>
+                        <th>Horario</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="court in availableCourts | orderBy:'+date'">
+                        <td>{{ court.courtId }}</td>
+                        <td>{{ court.date | date:'HH:mm:ss' }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </main>

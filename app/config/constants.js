@@ -15,6 +15,7 @@ angular.module('padelApp')
         _validateUsername: "username.php",
         _validateEmail: "email.php",
         _register: "usuario.php",
+        _booking: "disponibilidad.php",
 
         loginRoute: function () {
             return this.baseRoute + this._login;
@@ -27,5 +28,8 @@ angular.module('padelApp')
         },
         registerRoute: function() {
             return this.baseRoute + this._register;
+        },
+        bookingRoute: function() {
+            return this.baseRoute + this._booking;
         }
     });

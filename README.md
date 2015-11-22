@@ -1,6 +1,6 @@
 # TDCL
 
-## Práctica 2 - AngularJS - SPA (Login)
+## Práctica 3 - AngularJS - SPA (Registro + Reserva de pistas)
 
 ### Datos del alumno
 

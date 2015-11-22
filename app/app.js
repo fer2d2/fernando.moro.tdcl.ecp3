@@ -1,5 +1,6 @@
 'use strict';
 
 angular.module('padelApp', [
-    'ngRoute'
+    'ngRoute',
+    'ui.bootstrap'
 ]);
