@@ -22,7 +22,7 @@ angular.module('padelApp')
                 return ($scope.userData.username !== undefined && $scope.userData.username !== "");
             };
 
-            $scope.isRequired = function() {
+            $scope.isRequired = function () {
                 // Con validar uno de los campos es suficiente
                 return (!$scope.existsEmail() && !$scope.existsUsername());
             };
@@ -33,15 +33,15 @@ angular.module('padelApp')
                         'Content-Type': 'application/json'
                     },
                     params: {
-                        id: getChosenId(),
+                        id: _getChosenId(),
                         password: $scope.userData.password
                     }
                 }).then(function (successResponse) {
                     $log.info(successResponse);
 
                     var token = successResponse.headers(["token"]);
-                    if(!token) {
-                        displayErrorMessage(successResponse);
+                    if (!token) {
+                        _displayErrorMessage(successResponse);
                     } else {
                         $scope.errorAlert.show = false;
                         authentication.setToken(token);
@@ -52,7 +52,7 @@ angular.module('padelApp')
                 });
             };
 
-            function getChosenId() {
+            function _getChosenId() {
                 var chosenId;
 
                 if ($scope.existsUsername()) {
@@ -64,8 +64,9 @@ angular.module('padelApp')
                 return chosenId;
             }
 
-            function displayErrorMessage(successResponse) {
+            function _displayErrorMessage(successResponse) {
                 $scope.errorAlert.show = true;
                 $scope.errorAlert.message = successResponse.data.errorMessage;
             }
-        }]);
+        }
+    ]);

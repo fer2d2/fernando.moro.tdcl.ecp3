@@ -5,24 +5,25 @@ angular.module('padelApp')
         $routeProvider
             .when('/', {
                 templateUrl: 'app/views/main.html',
-                activetab: activeTabs.index
+                activeTab: activeTabs.index
             })
             .when('/facilities', {
                 templateUrl: 'app/views/facilities.html',
-                activetab: activeTabs.facilities
+                activeTab: activeTabs.facilities
             })
             .when('/booking', {
                 templateUrl: 'app/views/booking.html',
-                activetab: activeTabs.booking
+                activeTab: activeTabs.booking
             })
             .when('/register', {
                 templateUrl: 'app/views/register.html',
-                activetab: activeTabs.register
+                controller: 'registerController',
+                activeTab: activeTabs.register
             })
             .when('/login', {
                 templateUrl: 'app/views/login.html',
                 controller: 'loginController',
-                activetab: activeTabs.login
+                activeTab: activeTabs.login
             })
             .when('/logout', {
                 template: " ",

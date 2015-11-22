@@ -18,19 +18,19 @@
 
             <div class="collapse navbar-collapse" id="collapsible">
                 <ul class="nav navbar-nav">
-                    <li ng-class="{ active: route.current.activetab == activeTabs.index }">
+                    <li ng-class="{ active: route.current.activeTab == activeTabs.index }">
                         <a href="#/">Inicio</a>
                     </li>
-                    <li ng-class="{ active: route.current.activetab == activeTabs.facilities }">
+                    <li ng-class="{ active: route.current.activeTab == activeTabs.facilities }">
                         <a href="#facilities">Instalaciones</a>
                     </li>
-                    <li ng-class="{ active: route.current.activetab == activeTabs.booking }">
+                    <li ng-class="{ active: route.current.activeTab == activeTabs.booking }">
                         <a href="#booking">Reservar</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" ng-show="!authenticated">
-                    <li ng-class="{ active: route.current.activetab == activeTabs.register }"><a href="#register"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
-                    <li ng-class="{ active: route.current.activetab == activeTabs.login }"><a href="#login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li ng-class="{ active: route.current.activeTab == activeTabs.register }"><a href="#register"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
+                    <li ng-class="{ active: route.current.activeTab == activeTabs.login }"><a href="#login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" ng-show="authenticated">
                     <li><a href="#logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>

@@ -12,17 +12,20 @@ angular.module('padelApp')
         baseRoute: "http://salonso.etsisi.upm.es/miw_serv/padel/",
 
         _login: "conexion.php",
-        //_registerUsername: "username.php",
-        //_registerEmail: "email.php",
+        _validateUsername: "username.php",
+        _validateEmail: "email.php",
+        _register: "usuario.php",
 
         loginRoute: function () {
             return this.baseRoute + this._login;
         },
-        //registerUsernameRoute: function () {
-        //    return this.baseRoute + this._registerUsername;
-        //},
-        //registerEmailRoute: function () {
-        //    return this.baseRoute + this._registerEmail;
-        //}
-
+        validateUsernameRoute: function () {
+            return this.baseRoute + this._validateUsername;
+        },
+        validateEmailRoute: function () {
+            return this.baseRoute + this._validateEmail;
+        },
+        registerRoute: function() {
+            return this.baseRoute + this._register;
+        }
     });

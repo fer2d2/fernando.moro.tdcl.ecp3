@@ -30,6 +30,10 @@ input[disabled] {
     background-color: #eee;
 }
 
+.btn[disabled] {
+    background-color: #eee;
+}
+
 /* //////////////////////////////////// */
 
 /* ///////// Navbar overrides ///////// */

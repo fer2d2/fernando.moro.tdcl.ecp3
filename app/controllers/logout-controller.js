@@ -5,4 +5,5 @@ angular.module('padelApp')
         function ($log, $location, authentication) {
             authentication.removeToken();
             $location.path('/login');
-        }]);
+        }
+    ]);

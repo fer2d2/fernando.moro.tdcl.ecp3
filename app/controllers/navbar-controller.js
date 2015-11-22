@@ -8,11 +8,12 @@ angular.module('padelApp')
 
             $scope.authenticated = false;
 
-            $scope.$watch(function() {
+            $scope.$watch(function () {
                 return authentication.isUserAuthenticated();
             }, function (newVal) {
                 $log.info("Updated navbar. Authentication:", newVal);
 
                 $scope.authenticated = newVal;
             });
-        }]);
+        }
+    ]);

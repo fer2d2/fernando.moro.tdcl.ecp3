@@ -1,29 +1,61 @@
 <main class="form-container">
-    <form class="form-horizontal custom-form">
+    <form class="form-horizontal custom-form" ng-show="!validations.isRegistrationFinished">
         <h3 class="form-header">Registro</h3>
 
-        <div class="form-group">
-            <label for="username" class="control-label col-xs-4">Nombre de usuario*:</label>
-            <input type="text" id="username" class="col-xs-8" required>
+        <div class="alert alert-danger" role="alert" ng-show="!validations.isRegistrationOk">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Se produjo un error durante el
+            registro. Por favor, vuelva a intentarlo. Código del error: <em>{{ errorAlert }}</em>.
         </div>
-        <div class="form-group">
+
+        <div class="form-group" ng-class="{ 'has-error': !validations.isUsernameUnique }">
+
+            <div class="alert alert-danger" role="alert" ng-show="!validations.isUsernameUnique">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> El nombre de usuario
+                seleccionado ya existe.
+            </div>
+
+            <label for="username" class="control-label col-xs-4">Nombre de usuario*:</label>
+            <input type="text" id="username" class="col-xs-8" required ng-model="userData.username"
+                   ng-blur="validateUniqueUsername()">
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': !validations.isEmailUnique }">
+
+            <div class="alert alert-danger" role="alert" ng-show="!validations.isEmailUnique">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> El correo electrónico
+                seleccionado ya existe.
+            </div>
+
             <label for="useremail" class="control-label col-xs-4">Email*:</label>
-            <input type="email" id="useremail" class="col-xs-8" required placeholder="correo.usuario@email.com">
+            <input type="email" id="useremail" class="col-xs-8" required ng-model="userData.email"
+                   ng-blur="validateUniqueEmail()" placeholder="correo.usuario@email.com">
         </div>
         <div class="form-group">
             <label for="userbirthdate" class="control-label col-xs-4">Fecha de nacimiento*:</label>
-            <input type="date" id="userbirthdate" class="col-xs-8" required>
+            <input type="date" id="userbirthdate" class="col-xs-8" required ng-model="userData.birthDate">
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-class="{ 'has-error': !validations.isPasswordValid }">
             <label for="userpassword" class="control-label col-xs-4">Contraseña*:</label>
-            <input type="password" id="userpassword" class="col-xs-8" required>
+            <input type="password" id="userpassword" class="col-xs-8" required ng-model="userData.password">
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-class="{ 'has-error': !validations.isPasswordValid }">
+
+            <div class="alert alert-danger" role="alert" ng-show="!validations.isPasswordValid">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Las contraseñas
+                introducidas no coinciden.
+            </div>
+
             <label for="userpasswordvalidator" class="control-label col-xs-4">Confirmar contraseña*:</label>
-            <input type="password" id="userpasswordvalidator" class="col-xs-8" required>
+            <input type="password" id="userpasswordvalidator" class="col-xs-8" required ng-model="passwordValidate"
+                   ng-blur="validatePasswordMatch()">
         </div>
+
         <div class="send text-center">
-            <button type="submit" class="btn btn-default">Enviar</button>
+            <button type="submit" class="btn btn-default" ng-click="doRegister()" ng-disabled="!validations.canSend()">Enviar</button>
         </div>
     </form>
+
+    <div class="success custom-form" ng-show="validations.isRegistrationFinished">
+        <h2>¡Felicidades!</h2>
+        <h3>Ha finalizado con éxito el proceso de registro.</h3>
+    </div>
 </main>
